@@ -1,9 +1,9 @@
 # If you modified your gene count matrix or transcript count matrix to add functional annotations using ...
-# Trinity/Analysis/DifferentialExpression/rename_matrix_feature_identifiers.pl script, you will get an error
-# if you run Trinity/Analysis/DifferentialExpression/analyze_diff_expr.pl script for Gene Ontology analysis.
+# ... Trinity/Analysis/DifferentialExpression/rename_matrix_feature_identifiers.pl script, you will get an error ...
+# ... if you run Trinity/Analysis/DifferentialExpression/analyze_diff_expr.pl script for Gene Ontology analysis.
 # The error will be such as "Error in gene_lengths[features_with_GO, ] : subscript out of bounds".
 # You will get this error because of descrepancy between Trinity gene ids in "go_annotations" file and ...
-# annotated gene IDs in "gene.matrix" file in edger or deseq out folder.
+# ... annotated gene IDs in "gene.matrix" file in edger or deseq out folder.
 # To correct this error, modify the go_annotation file and gene_length file using the script below.
 
 setwd("Your_working_directory/")
