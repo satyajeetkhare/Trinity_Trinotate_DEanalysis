@@ -5,16 +5,16 @@
 # You will get this error because of descrepancy between Trinity gene ids and gene ids are annotation.
 # To correct this error, modify the go_annotation file and gene_length file using the script below.
 
-setwd("/home/lamarck/Satyajeet/Data/Mariam/nutshell/")
+setwd("Your_working_directory/")
 
 # Create data object for Trinity.gene.lengths
 Trinity_gene_lengths <- read.csv("Trinity.gene_lengths.txt", sep = "\t")
 
 # Create data object for go_annotations
-go_annotations <- read.csv("DE_analysis/go_annotations.txt", sep = NULL, header = FALSE)
+go_annotations <- read.csv("go_annotations.txt", sep = NULL, header = FALSE)
 
 # Create data object for annot_feature_map
-annot_feature_map <- read.csv("DE_analysis/annot_feature_map.txt", sep = "\t", header = FALSE)
+annot_feature_map <- read.csv("annot_feature_map.txt", sep = "\t", header = FALSE)
 
 # Modify Trinity_gene_lengths data object by adding a third column with Annotations
 Trinity_gene_lengths_mod <- left_join(Trinity_gene_lengths, annot_feature_map, by = c("X.gene_id" = "V1"))
@@ -45,4 +45,4 @@ write.table(go_annotations_mod, file = "go_annotations_mod.txt", quote = FALSE, 
 
 # Use "Trinity_gene_lengths_mod.txt" in place of "Trinity.gene_lengths.txt" 
 # and "go_annotations_mod.txt" in place of "go_annotations.txt"
-# in "Trinity-v2.6.5/Analysis/DifferentialExpression/analyze_diff_expr.pl"script
+# in "Trinity/Analysis/DifferentialExpression/analyze_diff_expr.pl"script.
